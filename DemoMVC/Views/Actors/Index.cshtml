@@ -1,0 +1,38 @@
+﻿@model IEnumerable<DemoConsoleMVC.Models.Actors>
+
+@{ 
+    ViewBag.Title = "Actors";
+}
+
+<h2>Actors</h2>
+
+<p>
+    <a asp-controller="Actors" asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>AcademyWinner</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(mItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(mItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(mItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(mItem => item.AcademyWinner)
+            </td>
+        </tr>
+    }
+</table>
